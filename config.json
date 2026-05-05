@@ -12,14 +12,14 @@
     "antiInbox": false,
     "language": "en",
     "notesLanguage": "change language using ISO 639-1 code",
-    "nickNameBot": "—͞ 𝐐𝐔𝐄𝐄𝐍 🎀❤️‍🩹",
+    "nickNameBot": "✦ 𝙏𝙊𝙍𝙐 𝘾𝙃𝘼𝙉 ✦",
     "prefix": "/",
     "adminOnly": {
         "enable": false,
         "ignoreCommand": []
     },
     "adminBot": [
-        "61583835186508",
+        "100048786044500",
         " ",
         " "
     ],
@@ -35,8 +35,8 @@
     "whiteListMode": {
         "enable": false,
         "whiteListIds": [
-            "100083039411474",
-            "100063840894133"
+            "100048786044500",
+            ""
         ],
         "notes": "If enabled, only IDs in whiteListIds can use the bot."
     },
