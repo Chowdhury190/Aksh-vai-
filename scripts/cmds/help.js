@@ -7,7 +7,7 @@ module.exports = {
     name: "help",
     aliases: ["menu"],
     version: "11.0",
-    author: "AKASH x HRIDOY",
+    author: "HRIDOY",
     shortDescription: "Animated Help Menu With Category Filter",
     category: "System",
     guide: "{pn}help [command | all]"
@@ -26,7 +26,7 @@ module.exports = {
       "Image",
       "Game",
       "Love",
-     "Tag Fun",
+      "Tag Fun",
       "Media"
     ];
 
@@ -36,12 +36,12 @@ module.exports = {
       if (!cmd) return message.reply("❌ Command not found!");
 
       return message.reply(
-`╭──❏ 𝐂𝐨𝐦𝐦𝐚𝐧𝐝 𝐈𝐧𝐟𝐨 ❏──╮
-│ ✧ Name: ${cmd.config.name}
-│ ✧ Category: ${cmd.config.category}
-│ ✧ Description: ${cmd.config.shortDescription}
-│ ✧ Usage: ${prefix}${cmd.config.name}
-╰─────────────────────⭓`
+`╭━━━〔 ✦ 𝐂𝐎𝐌𝐌𝐀𝐍𝐃 𝐈𝐍𝐅𝐎 ✦ 〕━━━⬣
+┃ ⌬ 𝐍𝐚𝐦𝐞 : ${cmd.config.name}
+┃ ⌬ 𝐂𝐚𝐭𝐞𝐠𝐨𝐫𝐲 : ${cmd.config.category}
+┃ ⌬ 𝐃𝐞𝐬𝐜𝐫𝐢𝐩𝐭𝐢𝐨𝐧 : ${cmd.config.shortDescription}
+┃ ⌬ 𝐔𝐬𝐚𝐠𝐞 : ${prefix}${cmd.config.name}
+╰━━━━━━━━━━━━━━━━━━━⬣`
       );
     }
 
@@ -49,7 +49,6 @@ module.exports = {
     for (let [name, cmd] of commandsMap) {
       const cat = cmd.config.category || "Others";
 
-      // If not using "all", filter category
       if (args[0] !== "all") {
         if (!allowedCategories.includes(cat)) continue;
       }
@@ -64,47 +63,47 @@ module.exports = {
 
     // ===== LOADING ANIMATION =====
     const loadingFrames = [
-      "𝐋𝐨𝐚𝐝𝐢𝐧𝐠 𝐇𝐞𝐥𝐩 𝐌𝐞𝐧𝐮...\n▰▱▱▱▱▱▱▱▱▱ 10%",
-      "𝐋𝐨𝐚𝐝𝐢𝐧𝐠 𝐇𝐞𝐥𝐩 𝐌𝐞𝐧𝐮...\n▰▰▰▱▱▱▱▱▱▱ 30%",
-      "𝐋𝐨𝐚𝐝𝐢𝐧𝐠 𝐇𝐞𝐥𝐩 𝐌𝐞𝐧𝐮...\n▰▰▰▰▰▱▱▱▱▱ 50%",
-      "𝐋𝐨𝐚𝐝𝐢𝐧𝐠 𝐇𝐞𝐥𝐩 𝐌𝐞𝐧𝐮...\n▰▰▰▰▰▰▰▱▱▱ 70%",
-      "𝐋𝐨𝐚𝐝𝐢𝐧𝐠 𝐇𝐞𝐥𝐩 𝐌𝐞𝐧𝐮...\n▰▰▰▰▰▰▰▰▰▱ 90%",
-      "𝐋𝐨𝐚𝐝𝐢𝐧𝐠 𝐇𝐞𝐥𝐩 𝐌𝐞𝐧𝐮...\n▰▰▰▰▰▰▰▰▰▰ 100%"
+
     ];
 
     let loadingMsg = await message.reply(loadingFrames[0]);
 
     for (let i = 1; i < loadingFrames.length; i++) {
       await new Promise(res => setTimeout(res, 400));
-      await api.editMessage(loadingFrames[i], loadingMsg.messageID);
+      try {
+        await api.editMessage(loadingFrames[i], loadingMsg.messageID);
+      } catch (e) {
+        // ignore error (fix for "message too old or not from you")
+      }
     }
 
-    // ===== BUILD HELP TEXT =====
-    let msg = `╭──❏ 𝐂𝐮𝐬𝐭𝐨𝐦 𝐇𝐞𝐥𝐩 𝐌𝐞𝐧𝐮 ❏──╮\n`;
-    msg += `│ ✧ Total Commands: ${commands.length}\n`;
-    msg += `│ ✧ Prefix: ${prefix}\n`;
-    msg += `╰─────────────────────⭓\n\n`;
+    // ===== BUILD HELP TEXT (ADVANCED STYLE) =====
+    let msg = `╭━━━〔 ✦ 𝐀𝐃𝐕𝐀𝐍𝐂𝐄𝐃 𝐇𝐄𝐋𝐏 𝐏𝐀𝐍𝐄𝐋 ✦ 〕━━━⬣\n`;
+    msg += `┃ ⌬ 𝐓𝐨𝐭𝐚𝐥 𝐂𝐨𝐦𝐦𝐚𝐧𝐝𝐬 : ${commands.length}\n`;
+    msg += `┃ ⌬ 𝐁𝐨𝐭 𝐏𝐫𝐞𝐟𝐢𝐱 : 『 ${prefix} 』\n`;
+    msg += `┃ ⌬ 𝐒𝐭𝐚𝐭𝐮𝐬 : 𝐀𝐜𝐭𝐢𝐯𝐞 🟢\n`;
+    msg += `╰━━━━━━━━━━━━━━━━━━━⬣\n\n`;
 
     for (let [cat, cmds] of Object.entries(categories)) {
 
-      msg += `╭─‣ 𝗖𝗮𝘁𝗲𝗴𝗼𝗿𝘆 : ${cat}\n`;
+      msg += `╭━━━〔 🗂️  ${cat.toUpperCase()} 〕━━━⬣\n`;
 
       for (let i = 0; i < cmds.length; i += 2) {
-        const row = [`「${cmds[i]}」`];
+        const row = [`✧ ${cmds[i]}`];
         if (cmds[i + 1])
-          row.push(`✘ 「${cmds[i + 1]}」`);
+          row.push(`┃ ✧ ${cmds[i + 1]}`);
 
-        msg += `├‣ ${row.join(" ")}\n`;
+        msg += `┃ ${row.join("   ")}\n`;
       }
 
-      msg += `╰────────────◊\n\n`;
+      msg += `╰━━━━━━━━━━━━━━━━━━━⬣\n\n`;
     }
 
-    msg += `⭔ Type ${prefix}help [command]\n`;
-    msg += `⭔ Type ${prefix}help all (Show All)\n\n`;
-    msg += `╭─[⋆˚🦋k̶a̶k̶a̶s̶h̶i̶X̶t̶o̶r̶u̶🎀⋆˚]\n`;
-    msg += `╰‣ Admin : Kakashi Hatake\n`;
-    msg += `╰‣ Report : .callad (yourmsg)\n`;
+    msg += `╭━━━〔 👑 𝐁𝐎𝐓 𝐈𝐍𝐅𝐎 〕━━━⬣\n`;
+    msg += `┃ 👤 𝐀𝐝𝐦𝐢𝐧 : Kakashi Hatake\n`;
+    msg += `┃ 📩 𝐑𝐞𝐩𝐨𝐫𝐭 : ${prefix}callad (yourmsg)\n`;
+    msg += `┃ ⚡ 𝐏𝐨𝐰𝐞𝐫𝐞𝐝 𝐁𝐲 : HRIDOY\n`;
+    msg += `╰━━━━━━━━━━━━━━━━━━━⬣\n`;
 
     // ===== RANDOM GIF =====
     const gifURLs = [
@@ -163,4 +162,4 @@ function downloadGif(url, dest) {
       reject(err);
     });
   });
-      }
+  }

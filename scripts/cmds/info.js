@@ -5,8 +5,8 @@ const path = require("path");
 const { utils } = global;
 
 const W = 490, H = 840;
-const AVATAR1 = "https://i.imgur.com/oEh5VEx.jpeg";
-const FALLBACK_AVATAR = "https://i.ibb.co/MC6bT5V/default-avatar.png";
+const AVATAR1 = "https://i.imgur.com/3RMAJwi.jpeg";
+const FALLBACK_AVATAR = "https://i.ibb.co/0pbyDWH4/1775849793961.jpg";
 
 function formatUptime(ms) {
   const totalSeconds = Math.floor(ms / 1000);
@@ -88,7 +88,7 @@ async function drawPage1(ctx) {
   ctx.fillStyle = "#ff99cc";
   ctx.shadowColor = "#ff33aa";
   ctx.shadowBlur = 25;
-  ctx.fillText("Supreme Shinobi 🥇⚜️", W / 2, 295);
+  ctx.fillText("HR ID OY", W / 2, 295);
 
   ctx.font = "italic 20px Arial";
   ctx.fillStyle = "#ff66cc";
@@ -112,7 +112,7 @@ async function drawPage1(ctx) {
   ctx.shadowBlur = 12;
 
   const lines = [
-    "Nickname: Kakashi 愛", "Age: 20+", "DOB:16 December 2006",
+    "Nickname: Kakashi æ„?", "Age: 20+", "DOB:13 December 2006",
     "Gender: Male", "Religion: Islam", "Nationality: Bangladeshi",
     "Location: Jashore", "Class: HSC26",
     `Time: ${new Date().toLocaleString("en-IN", { timeZone: "Asia/Dhaka" })}`
@@ -143,13 +143,7 @@ module.exports = {
   onStart: async function ({ api, event }) {
 
     const loadingFrames = [
-      "𝐋𝐨𝐚𝐝𝐢𝐧𝐠 𝐂𝐚𝐫𝐝...\n▰▱▱▱▱▱▱▱▱▱ 10%",
-      "𝐋𝐨𝐚𝐝𝐢𝐧𝐠 𝐂𝐚𝐫𝐝...\n▰▰▰▱▱▱▱▱▱▱ 30%",
-      "𝐋𝐨𝐚𝐝𝐢𝐧𝐠 𝐂𝐚𝐫𝐝...\n▰▰▰▰▰▱▱▱▱▱ 50%",
-      "𝐋𝐨𝐚𝐝𝐢𝐧𝐠 𝐂𝐚𝐫𝐝...\n▰▰▰▰▰▰▰▱▱▱ 70%",
-      "𝐋𝐨𝐚𝐝𝐢𝐧𝐠 𝐂𝐚𝐫𝐝...\n▰▰▰▰▰▰▰▰▰▱ 90%",
-      "𝐋𝐨𝐚𝐝𝐢𝐧𝐠 𝐂𝐚𝐫𝐝...\n▰▰▰▰▰▰▰▰▰▰ 100%"
-    ];
+  ];
 
     const loadingMsg = await api.sendMessage(loadingFrames[0], event.threadID);
     for (let i = 1; i < loadingFrames.length; i++) {
