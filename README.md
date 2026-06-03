@@ -5,10 +5,10 @@
 <br />
 <p align="center">
     <a href="https://github.com/rxabdullah007/Maria-v3">
-        <img src="https://i.imgur.com/oEh5VEx.jpeg" alt="Logo">
+        <img src="https://i.imgur.com/6usi1Xf.jpeg" alt="Logo">
     </a>
 
-<h3 align="center">✦ 𝗞𝗔𝗞𝗔𝗦𝗛𝗜 𝗛𝗔𝗧𝗔𝗞𝗘 ✦</h3>
+<h3 align="center">✦ 𝗛𝗥 𝗜𝗗 𝗢𝗬 ✦</h3>
 
 <p align="center">
     A simple Facebook Messenger Bot made by me (Kakashi).
@@ -116,7 +116,7 @@ info
 
 ## ✨ OWNAR PHOTO
 
-![Preview](https://i.imgur.com/oEh5VEx.jpeg)
+![Preview](https://i.imgur.com/6usi1Xf.jpeg)
 
 ---
 
