@@ -61,7 +61,7 @@ module.exports = {
 ╭━━━━━━━━━━━━━━━━━━╮
         👑 OWNER INFO
 ╰━━━━━━━━━━━━━━━━━━╯
-➤ Name        : Kakashi Hatake
+➤ Name        : 𝗔𝗸𝗮𝘀𝗵
 ➤ Role        : Bot Developer
 ➤ Facebook    : facebook.com/100061935903355
 ➤ Messenger   : m.me/100061935903355
@@ -75,7 +75,7 @@ module.exports = {
 ➤ Total Users  : ${totalUsers}
 
 ━━━━━━━━━━━━━━━━━━
-⚡ Powered By Kakashi
+⚡ Powered By 𝗔𝗸𝗮𝘀𝗵
 ━━━━━━━━━━━━━━━━━━`;
 
     // ===== IMAGE =====
